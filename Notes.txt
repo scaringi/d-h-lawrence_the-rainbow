@@ -1,0 +1,15 @@
+Notes about running Standard Ebooks tools on Mac OS X
+
+6. Split the source text at logical divisions:
+    Unix: sed --in-place "s/<h2/<\!--se:split--><h2/g" src/epub/text/body.xhtml
+    Mac: sed -i.bak "s/<h2/<\!--se:split--><h2/g" src/epub/text/body.xhtml
+
+7. Clean up the source text
+    Unix: sed --in-place --regexp-extended "s/<(p|h2)>\s+/<\1>/g" src/epub/text/chapter*
+    Mac: sed -i.bak -E "s/<(p|h2)>\s+/<\1>/g" src/epub/text/chapter*
+
+    Unix: sed --in-place --regexp-extended "s/\s+<\/(p|h2)>/<\/\1>/g" src/epub/text/chapter*
+    Mac: sed -i.bak -E "s/\s+<\/(p|h2)>/<\/\1>/g" src/epub/text/chapter*
+
+    Unix: sed --in-place "s|en-US|en-GB|g" src/epub/text/chapter*
+    Mac: sed -i.bak "s|en-US|en-GB|g" src/epub/text/chapter*
