@@ -13,3 +13,4 @@ Notes about running Standard Ebooks tools on Mac OS X
 
     Unix: sed --in-place "s|en-US|en-GB|g" src/epub/text/chapter*
     Mac: sed -i.bak "s|en-US|en-GB|g" src/epub/text/chapter*
+
